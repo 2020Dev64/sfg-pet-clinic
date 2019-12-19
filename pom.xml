@@ -38,6 +38,7 @@
 						<checkModificationExclude>pom.xml</checkModificationExclude>
 					</checkModificationExcludes>
 					<goals>install</goals>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
 				</configuration>
 			</plugin>
 
@@ -46,6 +47,15 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>2.19.1</version>
 				</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.1.1</version>
+				<configuration>
+					<javadocExecutable>/usr/bin/javadoc</javadocExecutable>
+				</configuration>
+			</plugin>
 
 		</plugins>
 	</build>
