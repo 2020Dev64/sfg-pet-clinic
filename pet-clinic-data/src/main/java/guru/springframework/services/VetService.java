@@ -1,5 +1,7 @@
 package guru.springframework.services;
 
-public interface VetService extends CrudService<VetService, Long>{
+import guru.springframework.model.Vet;
+
+public interface VetService extends CrudService<Vet, Long>{
 
 }
