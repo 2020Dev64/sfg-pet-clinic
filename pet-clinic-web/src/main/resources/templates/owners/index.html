@@ -5,7 +5,25 @@
     <title>List of Pet owners</title>
 </head>
 <body>
-<h1 th:text="'List of Owners'">Owner List</h1>
+<!--/*@thymesVar id="owner" type="guru.springframework.sfgpetclinic.model.Owner"*/-->
+    <h1 th:text="'List of Owners'">Owner List</h1>
 
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>LAst Name</th>
+        </tr>
+        </thead>
+        <tbody>
+<!-- th:each is going to iterate over owner, we made an iterable in the class ownercontroller called owners -->
+        <tr th:each="owner : ${owners}">
+            <td th:text="${owner.id}">1</td>
+            <td th:text="${owner.fristName}">Joe</td>
+            <td th:text="${owner.lastName}">Buck</td>
+        </tr>
+        </tbody>
+    </table>
 </body>
 </html>
