@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 // Now owners is prefixed
-//@RequestMapping("/owners")
+@RequestMapping("/owners")
 @Controller
 public class OwnerController {
 
@@ -19,7 +19,7 @@ public class OwnerController {
         this.ownerService = ownerService;
     }
 
-    @RequestMapping({"/owners", "/index", "/index.html"})
+    @RequestMapping({"", "/index", "/index.html"})
     public String listOwners(Model model){
 
         // gives back a set, when called by Spring MVC spring MVC is gonne inject the model
@@ -27,5 +27,10 @@ public class OwnerController {
         // and return back the owner index page
         model.addAttribute("owners", ownerService.findAll());
         return "owners/index";
+    }
+
+    @RequestMapping("/find")
+    public String findOwners(){
+        return "notimplemented";
     }
 }
